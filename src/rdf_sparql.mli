@@ -78,6 +78,12 @@ val solution_fold : (string -> Rdf_term.term -> 'a-> 'a) -> solution -> 'a -> 'a
   of the [solution]. *)
 val solution_iter : (string -> Rdf_term.term -> unit) -> solution -> unit
 
+
+(** [solution_find n solution] return the term associated to [n]
+    in the [solution].
+    Raise Not_found if no term is associated with this name. *)
+val solution_find : string -> solution -> Rdf_term.term
+
 (** {4 Convenient functions to access solution bindings.}
 
 All these functions can raise {!Rdf_dt.Error} exceptions in case
